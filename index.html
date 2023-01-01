@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Lists</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="header_inner center">
+      <a class="logo" href="index.html">My Lists</a>
+
+      <nav class="nav">
+        <ul>
+          <li><a href="#HomeTasks" class="nav_link">Home tasks</a></li>
+          <li><a href="#WorkTasks" class="nav_link">Work tasks</a></li>
+          <li><a href="#Shippinglist" class="nav_link">Shipping list</a></li>
+          <li><a href="#timerStopwatch" class="nav_link">Timer and Stopwatch</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="center list_wrap" id="HomeTasks">
+    <h2>Home Tasks</h2>
+    <form class="form">
+      <label class="app_input">
+        Task
+        <input type="text" name="homeTaskName" />
+      </label class="app_input">
+      <button class="app_btn" type="submit">+ Add home task</button class="app_btn">
+    </form>
+
+    <ol class="list"></ol>
+  </section>
+
+  <section class="center list_wrap" id="WorkTasks">
+    <h2>Work Tasks</h2>
+    <form class="form">
+      <label class="app_input">
+        Task
+        <input type="text" name="workTaskName" />
+      </label>
+      <label class="app_input">
+        DeadLine
+        <input type="date" name="workTaskDeadLine">
+      </label class="app_input">
+      <button class="app_btn" type="submit">+ Add Work task</button class="app_btn">
+    </form>
+
+    <ol class="list"></ol>
+  </section>
+
+  <section class="center list_wrap" id="Shippinglist">
+    <h2>Shipping list</h2>
+    <form class="form">
+      <label class="app_input">
+        Product
+        <input type="text" name="shoppingItemName" />
+      </label class="app_input">
+      <label class="app_input">
+        Link to product
+        <input type="url" name="shoppingItemLink" />
+      </label>
+
+      <button class="app_btn" type="submit">+ Add to shopping list</button class="app_btn">
+    </form>
+    <ol class="list"></ol>
+  </section>
+
+  <section class="center list_wrap" id="timerStopwatch">
+    <div class="timer">
+      <div class="board">
+        <p>
+          <span class="minute">00</span>:<span class="seconds">00</span>
+        </p>
+      </div>
+
+      <div class="management">
+        <div class="number-input">
+          <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus">-</button>
+          <input id="1" class="quantity" min="0" max="59" name="quantity" type="number" value="0"/>
+         <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
+        </div>
+
+        <button type="button" class="management__timerBtn" id="startCount">Start</button>
+        <button type="button" class="management__timerBtn" id="pauseCount">Pause</button>
+        <button type="button" class="management__timerBtn" id="resetCount">Reset</button>
+      </div>
+    </div><br>
+
+    <div class="stopwatch">
+      <div class="chronograph">
+        <div class="chronograph__block">
+          <div class="time hour">00</div>
+          <div class="title"></div>
+        </div>
+        <div class="chronograph__block">
+          <div class="time minute">00</div>
+          <div class="title"></div>
+        </div>
+        <div class="chronograph__block">
+          <div class="time second">00</div>
+          <div class="title"></div>
+        </div>
+        <div class="chronograph__block">
+          <div class="time millisecond">00</div>
+          <div class="title"></div>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button class="button start">Start</button>
+        <button class="button pause">Pause</button>
+        <button class="button stop">Stop</button>
+        <button class="button record">Record</button>
+        <button class="button reset">Reset</button>
+      </div>
+
+      <div class="results__block">
+		    <div class="results__title">Results:</div>
+		    <div class="results"></div>
+	    </div>
+    </div>
+
+  </section>
+
+  <script src="/js/modules/List.js"></script>
+  <script src="/js/modules/Item.js"></script>
+  <script src="/js/modules/WorkTask.js"></script>
+  <script src="/js/modules/ShoppingTask.js"></script>
+  <script src="/js/modules/Counter.js"></script>
+  <script src="/js/modules/Stopwatch.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+
+</html>
