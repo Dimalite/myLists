@@ -12,6 +12,11 @@ shoppingList.addItem();
 
 let counter = new Counter(document.querySelector('[name="quantity"]'));
 counter.init()
+
+// let watch = new CounterBackwards(document.querySelector('[name="quantity"]'));
+// watch.init()
+
+
 // function checkStorage(type) {
 // 	try {
 // 		var storage = window[type];

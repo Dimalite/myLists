@@ -4,10 +4,7 @@ class Counter {
     this.interval;
   }
 
-  
   init() {
-
-   
     const watchBtn = document.querySelector(".management");
     watchBtn.addEventListener("click", (event) => {
       const isButton = event.target.nodeName === "BUTTON";
@@ -18,12 +15,12 @@ class Counter {
       if (event.target.id === "resetCount") this.resetCount();
     });
 
-
   }
 	startCount() {
     let minuteElement = document.querySelector(".minute");
     let secondsElement = document.querySelector(".seconds");
     let current = this.input.value;
+    let minute = 0;
 
     this.interval = setInterval(() => {
 
@@ -32,6 +29,7 @@ class Counter {
         if (current == 0) {
           alert("Time is up!");
         }
+
         secondsElement.innerHTML = current < 10 ? "0" + current : current;
       } else {
         alert('Set the time!')
